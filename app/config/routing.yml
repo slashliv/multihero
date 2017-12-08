@@ -1,0 +1,3 @@
+hero_app:
+    resource: '@HeroAppBundle/Resources/config/routing.yml'
+    prefix: /

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">MultiHero</a>
+    </nav>
+</header>
+<div class="container">
+    <div class="row">
+        {% block content %}{% endblock %}
+    </div>
+</div>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

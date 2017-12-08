@@ -1,0 +1,23 @@
+{% extends '@HeroApp/Default/layout.html.twig' %}
+
+{% block content %}
+    <h2>Achieve table</h2>
+    <div class="table-responsive">
+        <table class="table achieve-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in entries %}
+                    <tr>
+                        <td>{{ entry.name }}</td>
+                        <td>{{ entry.description }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

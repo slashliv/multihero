@@ -1,0 +1,3 @@
+hero_app_achive_list:
+    path: /
+    defaults: { _controller: HeroAppBundle:Achieve:list }

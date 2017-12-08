@@ -1,0 +1,26 @@
+services:
+
+    # Event listeners
+    hero_saas.event_listener.console_command:
+        class: Hero\SaasBundle\EventListener\ConsoleCommandListener
+        arguments:
+            - '@doctrine.dbal.tenant_connection'
+            - '@hero_saas.repository.tenant'
+        tags:
+            - { name: kernel.event_listener, event: console.command, method: onConsoleCommand, priority: 255 }
+
+    hero_saas.event_listener.kernel_request:
+        class: Hero\SaasBundle\EventListener\KernelRequestListener
+        arguments:
+            - '@doctrine.dbal.tenant_connection'
+            - '@hero_saas.repository.tenant'
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+
+    # Repositories
+    hero_saas.repository.tenant:
+        class: Hero\SaasBundle\Repository\TenantRepository
+        factory: 'doctrine.orm.shared_entity_manager:getRepository'
+        arguments:
+            - Hero\SaasBundle\Entity\Tenant

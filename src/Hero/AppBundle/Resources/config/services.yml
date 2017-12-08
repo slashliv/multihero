@@ -1,0 +1,5 @@
+services:
+    hero_app.fixture.achieve:
+        class: Hero\AppBundle\DataFixtures\ORM\AchieveFixture
+        tags:
+            - 'doctrine.fixture.orm'
